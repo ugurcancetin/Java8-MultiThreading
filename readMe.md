@@ -11,8 +11,16 @@ Wish you the best and happy coding!!
 ## High Level Overview to Threads
 
 * Thread in Java represent an independent path of execution.
+
 * During its life time thread remains on various Thread states like NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING which describe what thread is doing. NEW means thread is just created but not yet stated, RUNNABLE means thread is started but waiting for CPU to be assigned by thread scheduler. BLOCKED, WAITING and TIMED_WAITING means thread is not doing anything instead its been blocked and waiting for IO to finished, class or object lock, or any other thread etc.
 
+* Every Java threads has priority and name. You can set priority and assign meaningful name while creating object of java.lang.Thread class in Java. its recommend practice to give every thread a meaningful name while creating it , it helps later when you debug your Java program or take thread dump for analysis. Otherwise Java will give your Thread default name like "Thread-number" if Thread is created using java.lang.Thread or "pool-number-thread-number" if Thread is created using ThreadFactory. In Java higher priority thread get preference in Execution over lower priority thread. you can check priority by using method like getProiroty() from thread class.
+
+* Creation of thread is a time-consuming job so having a Thread pool for performing task concurrently is modern day requirement of performance and scalability. Java 5 provides Executor framework which encapsulate task of creating and managing thread from application code. Consider using Thread pool if your application requires to handle load. In web and application server manages this thread pool because each request is processed in its own thread.
+
+* Thread.sleep() method is used to pause thread for specified duration. It is an overloaded method defined in java.lang.Thread class. On the other hand Thread.join() is used to wait for another thread to complete its task before running and yield() method is used to relinquish CPU so that other thread can acquire it.
+
+* wait() and notify() methods are used to communicate between two threads i.e. for inter thread communication in Java. Always check condition of  wait() method in loop and call them from synchronized context. wait() is a method which is defined in object class, and puts the current thread on hold and also releases the monitor (lock) held by this thread,  while notify() and notifyAll() methods notifies all thread waiting on that monitor. There is no guarantee which thread will picked up by thread scheduler and given CPU to execute because of of notification. To learn more about how to use wait, notify and notifyAll method to achieve inter-thread communication solving producer consumer problem in Java using wait and notify method is quite common way.
 
 ## Learn With Questions 
 
