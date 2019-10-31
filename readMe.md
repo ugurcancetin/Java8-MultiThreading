@@ -22,6 +22,18 @@ Wish you the best and happy coding!!
 
 * wait() and notify() methods are used to communicate between two threads i.e. for inter thread communication in Java. Always check condition of  wait() method in loop and call them from synchronized context. wait() is a method which is defined in object class, and puts the current thread on hold and also releases the monitor (lock) held by this thread,  while notify() and notifyAll() methods notifies all thread waiting on that monitor. There is no guarantee which thread will picked up by thread scheduler and given CPU to execute because of of notification. To learn more about how to use wait, notify and notifyAll method to achieve inter-thread communication solving producer consumer problem in Java using wait and notify method is quite common way.
 
+* Thread scheduling is done by Thread Scheduler which is platform dependent and stays inside JVM. There is no known way to control thread scheduler from Java and many of thread related decision is done by scheduler like if there are many threads is waiting then which thread will be awarded CPU.
+
+* Thread.isActive() method is used to check whether a thread is active or not. A thread is said to be active until it has not finished either by returning from run() method normally or due to any exception. Thread.holdsLock() method is used to check if a thread holds a lock or not.
+
+* Every thread in Java has its own stack, which is used to store local variables and method calls. Size of this stack can be controlled using -XX:ThreadStackSize JVM option e.g. -XX:ThreadStackSize=512.
+
+* Java 5 introduced another way to define task for threads in Java by using Callable interface. It's similar to Runnable interface but provides some more capability e.g. it can return result of task execution, which was not possible in Runnable, because return type of run() method was void. Like its predecessor it define a call() method which can return Future object, you can call get() method on this object to get the result of task execution.
+
+* Java provides interrupt() method to interrupt a thread in Java. You can interrupt a running thread, waiting thread or sleep thread. This is the control Java provides to prevent a blocked or hanged thread. Once you interrupt a thread, it will also throw InterruptedException, which is a checked exception to ensure that your code should take handle interrupts.
+
+
+
 ## Learn With Questions 
 
 ### What is Thread in Java? 
