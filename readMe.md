@@ -10,6 +10,10 @@ Wish you the best and happy coding!!
 
 ## High Level Overview to Threads
 
+* Thread in Java represent an independent path of execution.
+* During its life time thread remains on various Thread states like NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING which describe what thread is doing. NEW means thread is just created but not yet stated, RUNNABLE means thread is started but waiting for CPU to be assigned by thread scheduler. BLOCKED, WAITING and TIMED_WAITING means thread is not doing anything instead its been blocked and waiting for IO to finished, class or object lock, or any other thread etc.
+
+
 ## Learn With Questions 
 
 ### What is Thread in Java? 
