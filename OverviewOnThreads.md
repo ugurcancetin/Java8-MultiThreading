@@ -1,5 +1,5 @@
 
-# High Level Overview to Threads
+# Threads
 
 This file concern is giving you overview about Threads which covers important points on a layered way. 
 
