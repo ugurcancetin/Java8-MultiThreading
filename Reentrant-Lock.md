@@ -33,6 +33,8 @@ public void some_method() {
 } 
 ```
 
+:zap: It's very critical to use at least try and finally blocks, because of the fact that if an exception occurs, lock won't be able to removed. But thanks to finally block, it's made sure that unlock operation will come true. 
+
 ## Youtube Video Link 
 
 [Video Link For Better Understanding](https://www.youtube.com/watch?v=ahBC69_iyk4)
